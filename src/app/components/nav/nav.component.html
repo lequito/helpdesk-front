@@ -2,7 +2,7 @@
     <mat-drawer #drawer class="sidenav" mode="side">
         <img src="assets/img/side-image.svg" alt="Imagem do menu">
         <mat-nav-list class="nav-list">
-            <a mat-list-item routerLink="/">
+            <a mat-list-item routerLink="home">
                 <i class="material-icons">home</i> Home
             </a>
             <a mat-list-item routerLink="/">
@@ -21,6 +21,7 @@
         <button class="menu mat-elevation-z8" type="button" mat-icon-button (click)="drawer.toggle()">
             <mat-icon>menu</mat-icon>
         </button>
+        <router-outlet></router-outlet>
     </div>
 
 </mat-drawer-container>

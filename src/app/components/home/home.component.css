@@ -1,0 +1,13 @@
+.card {
+    width: 85%;
+    margin: auto;
+    background-color: rgb(245, 245, 220);
+}
+
+img {
+    height: 20rem;
+}
+
+p {
+    text-align: center;
+}
