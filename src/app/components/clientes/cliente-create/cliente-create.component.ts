@@ -2,17 +2,17 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { Tecnico } from 'src/app/models/tecnico';
-import { TecnicoService } from 'src/app/services/tecnico.service';
+import { Cliente } from 'src/app/models/cliente';
+import { ClienteService } from 'src/app/services/cliente.service';
 
 @Component({
-  selector: 'app-tecnico-create',
-  templateUrl: './tecnico-create.component.html',
-  styleUrls: ['./tecnico-create.component.css']
+  selector: 'app-cliente-create',
+  templateUrl: './cliente-create.component.html',
+  styleUrls: ['./cliente-create.component.css']
 })
-export class TecnicoCreateComponent implements OnInit {
+export class ClienteCreateComponent implements OnInit {
 
-  tecnico: Tecnico = {
+  cliente: Cliente = {
     id: '',
     nome: '',
     cpf: '',
@@ -28,7 +28,7 @@ export class TecnicoCreateComponent implements OnInit {
   senha: FormControl =  new FormControl(null, Validators.minLength(3));
 
   constructor(
-    private service: TecnicoService,
+    private service: ClienteService,
     private toast: ToastrService,
     private router: Router
   ) { }
@@ -37,9 +37,9 @@ export class TecnicoCreateComponent implements OnInit {
   }
 
   create(){
-    this.service.create(this.tecnico).subscribe(() => {
-      this.toast.success("Técnico  criado com sucesso!" , "Cadastro")
-      this.router.navigate(['tecnicos'])
+    this.service.create(this.cliente).subscribe(() => {
+      this.toast.success("Cliente  criado com sucesso!" , "Cadastro")
+      this.router.navigate(['clientes'])
     }, ex => {
       if(ex.error.errors){
         ex.error.errors.forEach(element => {
@@ -52,10 +52,10 @@ export class TecnicoCreateComponent implements OnInit {
   }
 
   addPerfil(perfil:any): void{
-    if(this.tecnico.perfis.includes(perfil)){
-      this.tecnico.perfis.splice(this.tecnico.perfis.indexOf(perfil), 1)
+    if(this.cliente.perfis.includes(perfil)){
+      this.cliente.perfis.splice(this.cliente.perfis.indexOf(perfil), 1)
     }else{
-      this.tecnico.perfis.push(perfil);
+      this.cliente.perfis.push(perfil);
     }
   }
 

@@ -1,6 +1,6 @@
 .container {
     width: 85%;
-    margin: auto;
+    margin: auto auto 3rem auto;
 }
 
 table {
@@ -27,5 +27,11 @@ h1 {
 }
 
 .delete {
-    color: red;
+    color: rgb(63, 81, 181);
+}
+
+mat-radio-group {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 1rem;
 }

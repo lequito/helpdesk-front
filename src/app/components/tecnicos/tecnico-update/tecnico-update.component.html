@@ -1,7 +1,7 @@
 <div class="container mat-elevation-z8">
     <form class="form">
 
-        <h1 class="fullwidth">Cadastro de Técnicos</h1>
+        <h1 class="fullwidth">Atualizar Técnicos</h1>
         <img class="fullwidth" src="assets/img/tecnico-create.svg" alt="">
 
         <section class="section">
@@ -34,8 +34,8 @@
             <mat-icon matSuffix>password</mat-icon>
         </mat-form-field>
 
-        <button (click)="create()" [disabled]="!validaCampos()" class="fullwidth mat-elevation-z4" mat-flat-button color="primary">Criar</button>
-        <button routerLink="../" class="fullwidth mat-elevation-z4" mat-flat-button color="accent">Cancelar</button>
+        <button (click)="update()" [disabled]="!validaCampos()" class="fullwidth mat-elevation-z4" mat-flat-button color="primary">Atualizar</button>
+        <button routerLink="../../" class="fullwidth mat-elevation-z4" mat-flat-button color="accent">Cancelar</button>
 
     </form>
 </div>

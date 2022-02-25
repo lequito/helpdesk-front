@@ -1,11 +1,21 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './auth/auth.guard';
+import { ChamadoCreateComponent } from './components/chamado/chamado-create/chamado-create.component';
+import { ChamadoListComponent } from './components/chamado/chamado-list/chamado-list.component';
+import { ChamadoReadComponent } from './components/chamado/chamado-read/chamado-read.component';
+import { ChamadoUpdateComponent } from './components/chamado/chamado-update/chamado-update.component';
+import { ClienteCreateComponent } from './components/clientes/cliente-create/cliente-create.component';
+import { ClienteDeleteComponent } from './components/clientes/cliente-delete/cliente-delete.component';
+import { ClienteListComponent } from './components/clientes/cliente-list/cliente-list.component';
+import { ClienteUpdateComponent } from './components/clientes/cliente-update/cliente-update.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { NavComponent } from './components/nav/nav.component';
 import { TecnicoCreateComponent } from './components/tecnicos/tecnico-create/tecnico-create.component';
+import { TecnicoDeleteComponent } from './components/tecnicos/tecnico-delete/tecnico-delete.component';
 import { TecnicoListComponent } from './components/tecnicos/tecnico-list/tecnico-list.component';
+import { TecnicoUpdateComponent } from './components/tecnicos/tecnico-update/tecnico-update.component';
 
 const routes: Routes = [
   {
@@ -16,8 +26,21 @@ const routes: Routes = [
     path: '',
     component: NavComponent, canActivate:[AuthGuard], children:[
       { path:'home', component: HomeComponent },
-      { path: 'tecnicos', component: TecnicoListComponent },
-      { path: 'tecnicos/create', component: TecnicoCreateComponent }
+      
+      { path: 'tecnicos',              component: TecnicoListComponent },
+      { path: 'tecnicos/create',     component: TecnicoCreateComponent },
+      { path: 'tecnicos/update/:id', component: TecnicoUpdateComponent },
+      { path: 'tecnicos/delete/:id', component: TecnicoDeleteComponent },
+
+      { path: 'clientes', component:              ClienteListComponent },
+      { path: 'clientes/create', component:     ClienteCreateComponent },
+      { path: 'clientes/update/:id', component: ClienteUpdateComponent },
+      { path: 'clientes/delete/:id', component: ClienteDeleteComponent },
+
+      { path: 'chamados', component: ChamadoListComponent },
+      { path: 'chamados/create',     component: ChamadoCreateComponent },
+      { path: 'chamados/update/:id', component: ChamadoUpdateComponent },
+      { path: 'chamados/read/:id',   component: ChamadoReadComponent   }
     ]
   }
 ];

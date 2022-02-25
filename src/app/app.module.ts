@@ -28,9 +28,18 @@ import { TecnicoListComponent } from './components/tecnicos/tecnico-list/tecnico
 import { LoginComponent } from './components/login/login.component';
 import { ToastrModule } from 'ngx-toastr';
 import { AuthInterceptorProvider } from './interceptors/auth.interceptor';
-import { TecnicoCreateComponent } from './components/tecnicos/tecnico-create/tecnico-create.component';
 import { NgxMaskModule } from 'ngx-mask';
-
+import { TecnicoUpdateComponent } from './components/tecnicos/tecnico-update/tecnico-update.component';
+import { TecnicoCreateComponent } from './components/tecnicos/tecnico-create/tecnico-create.component';
+import { TecnicoDeleteComponent } from './components/tecnicos/tecnico-delete/tecnico-delete.component';
+import { ClienteCreateComponent } from './components/clientes/cliente-create/cliente-create.component';
+import { ClienteDeleteComponent } from './components/clientes/cliente-delete/cliente-delete.component';
+import { ClienteListComponent } from './components/clientes/cliente-list/cliente-list.component';
+import { ClienteUpdateComponent } from './components/clientes/cliente-update/cliente-update.component';
+import { ChamadoListComponent } from './components/chamado/chamado-list/chamado-list.component';
+import { ChamadoCreateComponent } from './components/chamado/chamado-create/chamado-create.component';
+import { ChamadoUpdateComponent } from './components/chamado/chamado-update/chamado-update.component';
+import { ChamadoReadComponent } from './components/chamado/chamado-read/chamado-read.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,7 +48,17 @@ import { NgxMaskModule } from 'ngx-mask';
     HeaderComponent,
     TecnicoListComponent,
     LoginComponent,
+    TecnicoUpdateComponent,
     TecnicoCreateComponent,
+    TecnicoDeleteComponent,
+    ClienteCreateComponent,
+    ClienteDeleteComponent,
+    ClienteListComponent,
+    ClienteUpdateComponent,
+    ChamadoListComponent,
+    ChamadoCreateComponent,
+    ChamadoUpdateComponent,
+    ChamadoReadComponent
   ],
   imports: [
     BrowserModule,
